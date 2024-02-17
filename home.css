@@ -1,0 +1,302 @@
+/*header for desktop viev start*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+   }
+
+.body {
+      overflow-x: hidden;
+      }
+
+.header {
+      padding: 0 4.8rem;
+      height: 10rem;
+      display: flex;
+       justify-content: space-between;
+      align-items: center;
+      background-color: tomato;
+      border-bottom:2px solid yellowgreen;
+         }
+
+#logo{color: white;
+font-size: 30px;
+border: 3px solid black;
+padding:10px;
+border-radius: 20px;
+background:black;}
+
+.headplatfom{ border:3px solid black;
+                 padding: 10px;
+            }
+.headplatfom-headimg{
+                      padding-left: 10px;
+                      }
+.navbarlist {
+              display: flex;
+               gap: 4.8rem;
+              list-style: none;
+            }
+
+.navabar-link:link,
+.navabar-link:visited {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #212529;
+  transform: all 0.3s;
+}
+
+.navabar-link:hover,
+.navabar-link:active {
+  color: #81228d;
+}
+
+.mobile-navbar-btn {
+
+  /* display:none;
+                            background:transparent;
+                            cursor:pointer;*/
+}
+
+.mobile-nav-icon {
+  width: 4rem;
+  height: 4rem;
+  color: #4876a3;
+}
+
+.mobile-nav-icon[name="close-outline"] {
+  display: none;
+}
+.mobile-nav-icon[name="menu-outline"] {
+  display: none;
+}
+
+/*header for desktop viev end*/
+
+
+/*order and menu CSS section start*/
+.container2 {
+  text-align: center;
+  align-items: center;
+  background:black;
+  width: 100%;
+  height: 100px;
+  padding-top: 20px;
+}
+
+
+.menu{
+      font-size: 30px;
+      font-weight: bold;
+      color: white;
+      margin-top: 10px;
+     }
+
+  .button{
+    
+         background-color:yellow;
+         font-size:20px;
+         margin-top: 10px;
+         border: 3px solid red;
+         border-radius: 100px;
+         text-decoration:none;
+         color: black;
+        
+        }
+
+
+
+
+/*order and menu CSS section end*/
+
+
+/*hero section and servicess section viev*/
+
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+
+  margin-top: 0px;
+  padding-bottom: 20px;
+  background: tomato;
+  width: 100%;
+}
+
+.card {
+  border: 2px solid greenyellow;
+  text-align: center;
+  padding: 20px;
+  background: #212529;
+}
+
+
+
+
+.img1>img {
+  width: 100%;
+  border-radius: 300px;
+
+}
+
+.img1 {
+  border: 2px solid goldenrod;
+  border-radius: 300px;
+}
+
+.price>h1 {
+  margin-top: 5px;
+  color: #e7f5ff;
+
+
+}
+
+.price>p {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bolder;
+  border: 1px solid black;
+  background: yellow;
+
+
+
+}
+
+.heading
+{
+ color:white;
+ border: 1px solid yellow;
+ border-radius: 120px;
+ background-color: tomato;
+
+}
+
+.item
+{
+width:100px;
+align-items:center;
+text-align:center;
+margin-left:136px;
+margin-top: 20px;
+
+
+
+}
+
+
+/*hero and service section end*/
+
+
+
+
+
+
+
+
+
+/*services section css start*/
+
+.section-sevices {
+  padding: 9.6rem 0;
+  background-color: #a5d8ff;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-sevices {
+  background-color: #5173d0;
+}
+
+
+.section-sevices p {
+  font-size: 3.2rem;
+}
+
+
+/*services section css end*/
+
+
+
+
+
+
+/*header for desktop viev end*/
+
+
+
+/* responsiv view*/
+
+@media (max-width:62em) {
+  .mobile-navbar-btn {
+    display:block;
+    z-index: 999;
+    border: 3px solid black;
+    color: #212529;
+
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: 1fr;
+
+  }
+
+
+
+  .header {
+    position: relative;
+  }
+
+
+  .navbar {
+    /* display:none;*/
+    width: 100%;
+    height: 100vh;
+    background: #e7f5ff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: all 0.5s linear;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .navbarlist {
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .active .navbar {
+    transform: translate(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .active .mobile-navbar-btn .mobile-nav-icon[name="close-outline"] {
+    display: block;
+  }
+
+  .active .mobile-navbar-btn .mobile-nav-icon[name="menu-outline"] {
+    display: none;
+  }
+}
+
+/*responsive view end */

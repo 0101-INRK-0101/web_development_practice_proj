@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.container
+{
+background:blueviolet;
+align-items: center;
+width:100%;
+height: 900px;;
+padding-top:30px;
+
+
+}
+
+
+.detail
+{
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  outline:none;
+  background: white;
+  width: 40%;
+  border-radius: 20px;
+  margin: auto;
+  padding-bottom: 20px;
+
+  
+}
+
+label
+{margin-right: 100px;
+ margin-top: 10px;
+}
+
+input
+{
+ background:wheat ;
+
+}
+.selecorder
+{
+text-align:left;
+display:flex;
+flex-direction:column;
+padding-top: 10px;
+background: white;
+width:55%;
+margin-top: 30px;
+margin-left: 30px;
+border-radius: 12px;
+padding-bottom:20px;
+
+}
+.selecorder,h1
+{
+text-align: center;
+
+}
+
+.selecorder,input
+{
+margin-right:20px;
+margin-left:20px;
+font-weight: bold;
+font-size:10px ;
+
+
+}
+.selectdata
+{
+  margin-top: 10px;
+  text-align: center;
+
+
+}
+
+.item1
+{
+ padding-bottom:5px;
+ font-size:20px;
+ font-weight: bold;
+
+
+}
+
+#num1
+{
+  padding-left: 20px;
+}
+.bill
+{
+  float:right;
+  margin-right: 70px;
+  background:yellow;
+  position: relative;
+ bottom: 200px;
+ border:2px solid whitesmoke;
+ padding: 10px;
+}
+.head
+{
+
+   font-size:20px;
+   margin-top:10px;
+  
+}
+
+#billtable
+{
+text-align: center;
+
+}
+.table
+{margin-top: 25px;
+ width:100%;}
+
+     /* Responsive*/
+@media (max-width:62rem) {
+ 
+  .bill
+{
+  float: none;
+ 
+  margin: auto;
+  background:yellow;
+  position: relative;
+  top:30px;
+ bottom: 0px;
+ border:2px solid whitesmoke;
+ padding: 10px;
+}
+
+.selecorder
+{ position: relative;
+  top:20px;
+  align-items: center;
+  margin: auto;
+text-align:left;
+display:flex;
+flex-direction:column;
+padding-top: 10px;
+background: white;
+width:55%;
+
+padding-bottom:20px;
+
+}
+
+.container
+{
+background:blueviolet;
+align-items: center;
+width:100%;
+height: 1100px;;
+padding-top:30px;
+
+
+}
+  }
+
+</style>
+</head>
+<body>
+
+   <!-- This is main container starts    -->
+     
+    <div class="container">
+         <!-- Get user info start    -->
+             <div class="detail">
+                 <h2 class="heading">Enter Your Detailed</h2>
+                  <label for="">Enter Name</label> 
+                  <input type="text" id="yname" placeholder="rahul">
+                  <label for="">Email ID</label>
+                  <input type="text" id="email" placeholder="kosmerahul@gmail.com">
+                  <label for="">Mobile No</label>
+                 <input type="text" id="mobile" placeholder="8806790964">
+            </div>
+           
+        <!-- Get user info end    -->
+
+           
+        
+       <!-- Order menu option start    -->
+         <div class="selecorder">
+              
+                                               <h1>Your Order</h1>
+              <div class="selectdata">
+                  
+                <div class="item1">Samosa:(Full-25 / Half-15)<input type="text" id="sfull" placeholder="Quantity Full"><input type="text" id="shalf"placeholder="Quantity Half"></div>   
+                  <div class="item1">Dosa:(Full-25 / Half-15)<input type="text" id="dfull"placeholder="Quantity Full"><input type="text" id="dhalf"placeholder="Quantity Half"></div>      
+                  <div class="item1">Bhajiya:(Full-25 / Half-15)<input type="text" id="bfull"placeholder="Quantity Full"><input type="text" id="bhalf"placeholder="Quantity Half"></div>      
+                  <div class="item1">Jalebi:(Full-30 / Half-15)<input type="text" id="jfull"placeholder="Quantity Full"><input type="text" id="jhalf"placeholder="Quantity Half"></div>     
+                  <div class="item1">Noodles:(Full-50 / Half-30)<input type="text" id="nfull"placeholder="Quantity Full"><input type="text" id="nhalf"placeholder="Quantity Half"></div>   
+                  <div class="item1">Wadapav:(Full-30 / Half-15)<input type="text" id="wfull"placeholder="Quantity Full"><input type="text" id="whalf"placeholder="Quantity Half"></div>   
+             
+                </div>
+        
+        </div>
+
+       <!-- Order menu option end    -->
+
+          
+       <!-- Bill start    -->
+       <div class="bill">
+                 <h1 class="head">Bill</h1>
+                   <hr>
+                       <b> Name:</b><h1 class="head" id="name1"></h1>
+                       <b>Email:</b><h1 class="head" id="email1"></h1>
+                       <b> Mobile No:</b><h1 class="head" id="mobile1"></h1>
+                   <hr>
+
+         <table border="1" cellspasing="0" cellpadding="5" class="table" >
+           
+          <thead>
+               <tr>
+                 <th>Menu</th><th>Price</th><th>Quantity Half</th><th>Quantity Full</th><th>Amounth</th>
+               </tr>
+          </thead>
+        
+          <tbody id="billtable">
+          
+          </tbody>
+           
+            
+        </table>
+        <center><b>Total Amounth:</b></center><h1 id="head"></h1>
+
+      </div>
+      <!-- Bill end   -->
+
+  </div>
+  <!-- This is main container end    -->
+ <script> 
+
+ /*All veriable set with requirement */
+  var totalA=0;
+  var spf=25;var sph=15;var spricef=0;var spriceh=0;var showsamosafull="";var showsamosahalf="";
+  var dpf=25;var dph=15;var dpricef=0;var dpriceh=0;var showdosafull="";var showdosahalf="";
+  var bpf=25;var bph=15;var bpricef=0;var bpriceh=0;var showbhajiyafull="";var showbhajiyahalf="";
+  var jpf=30;var jph=15;var jpricef=0;var jpriceh=0;var showjalebifull="";var showjalebihalf="";
+  var npf=50;var nph=30;var npricef=0;var npriceh=0;var shownoodlesfull="";var shownoodleshalf="";
+  var wpf=30;var wph=15;var wpricef=0;var wpriceh=0;var showwadapavfull="";var showwadapavhalf="";
+  
+   /* veriable end */
+  
+  
+  /* Get User Information and dynamically show in bill*/
+  
+  document.getElementById("yname").addEventListener("keyup",function(){
+  var yname = document.getElementById("yname").value;
+  document.getElementById("name1").innerHTML=yname;});
+
+  document.getElementById("email").addEventListener("keyup",function(){
+  var ename = document.getElementById("email").value;
+  document.getElementById("email1").innerHTML=ename;});
+
+  document.getElementById("mobile").addEventListener("keyup",function(){
+  var mname = document.getElementById("mobile").value;
+  document.getElementById("mobile1").innerHTML=mname;});
+
+  /* info   end */
+
+
+
+  /* Order full quantity item and it show dynamically in bill*/
+  document.getElementById("sfull").addEventListener("keyup",function(){
+  var svaluef = document.getElementById("sfull").value;
+  if(svaluef==""||svaluef==0)
+  {
+    showsamosafull="";
+    billshow();
+    
+  }
+
+  else{ spricef=svaluef*spf;
+    showsamosafull="<tr><td>Samosa</td><td>full-25/half-15</td><td>-</td><td>"+svaluef+"</td><td>"+svaluef+"*"+spf+"="+spricef+"</td></tr>";
+    billshow();
+    totalAmounth();
+      }
+
+ });
+
+    /* full quantity end */
+
+    /* Order half quantity item and it show dynamically in bill */
+
+    document.getElementById("shalf").addEventListener("keyup",function(){
+  var svalueh = document.getElementById("shalf").value;
+  if(svalueh==""||svalueh==0)
+  {
+    showsamosahalf="";
+    billshow();
+    
+  }
+
+  else{ spriceh=svalueh*sph;
+    showsamosahalf="<tr><td>Samosa</td><td>full-25/half-15</td><td>"+svalueh+"</td><td>-</td><td>"+svalueh+"*"+sph+"="+spriceh+"</td></tr>";
+    billshow();
+    totalAmounth();
+      }
+
+    });
+
+    /* half quantity */
+
+
+    
+    
+    document.getElementById("dfull").addEventListener("keyup",function(){
+  var dvaluef = document.getElementById("dfull").value;
+  if(dvaluef==""||dvaluef==0)
+  {
+    showdosafull="";
+    billshow();
+    
+  }
+
+  else{ dpricef=dvaluef*dpf;
+    showdosafull="<tr><td>Dosa</td><td>full-25/half-15</td><td>-</td><td>"+dvaluef+"</td><td>"+dvaluef+"*"+dpf+"="+dpricef+"</td></tr>";
+    billshow();
+    totalAmounth();
+      }
+
+      
+
+    });
+
+    document.getElementById("dhalf").addEventListener("keyup",function(){
+  var dvalueh = document.getElementById("dhalf").value;
+  if(dvalueh==""||dvalueh==0)
+  {
+     showdosahalf="";
+    billshow();
+    
+  }
+
+  else{ dpriceh=dvalueh*dph;
+  showdosahalf="<tr><td>Dosa</td><td>full-25/half-15</td><td>"+dvalueh+"</td><td>-</td><td>"+dvalueh+"*"+dph+"="+dpriceh+"</td></tr>";
+    billshow();
+    totalAmounth();
+      }
+    });
+
+
+    document.getElementById("bfull").addEventListener("keyup",function(){
+  var bvaluef = document.getElementById("bfull").value;
+  if(bvaluef==""||bvaluef==0)
+  {
+    showbhajiyafull="";
+    billshow();
+    
+  }
+
+  else{ bpricef=bvaluef*bpf;
+    showbhajiyafull="<tr><td>Dosa</td><td>full-25/half-15</td><td>-</td><td>"+bvaluef+"</td><td>"+bvaluef+"*"+bpf+"="+bpricef+"</td></tr>";
+    billshow();
+    totalAmounth();
+      }
+
+      
+
+    });
+
+    document.getElementById("bhalf").addEventListener("keyup",function(){
+  var bvalueh = document.getElementById("bhalf").value;
+  if(bvalueh==""||bvalueh==0)
+  {
+    showbhajiyahalf="";
+    billshow();
+    
+  }
+
+  else{ bpriceh=bvalueh*bph;
+    showbhajiyahalf="<tr><td>Dosa</td><td>full-25/half-15</td><td>"+bvalueh+"</td><td>-</td><td>"+bvalueh+"*"+bph+"="+bpriceh+"</td></tr>";
+    billshow();
+    totalAmounth();
+      }
+    });
+
+    document.getElementById("jfull").addEventListener("keyup",function(){
+  var jvaluef = document.getElementById("jfull").value;
+  if(jvaluef==""||jvaluef==0)
+  {
+    showjalebifull="";
+    billshow();
+    
+  }
+
+  else{ jpricef=jvaluef*jpf;
+    showjalebifull="<tr><td>jalebi</td><td>full-30/half-15</td><td>-</td><td>"+jvaluef+"</td><td>"+jvaluef+"*"+jpf+"="+jpricef+"</td></tr>";
+    billshow();
+    totalAmounth();
+      }
+    });
+
+
+    document.getElementById("jhalf").addEventListener("keyup",function(){
+  var jvalueh = document.getElementById("jhalf").value;
+  if(jvalueh==""||jvalueh==0)
+  {
+    showjalebihalf="";
+    billshow();
+    
+  }
+
+  else{ jpriceh=jvalueh*jph;
+    showjalebihalf="<tr><td>Jalebi</td><td>full-30/half-15</td><td>"+jvalueh+"</td><td>-</td><td>"+jvalueh+"*"+jph+"="+jpriceh+"</td></tr>";
+    billshow();
+    totalAmounth();
+      }
+    });
+
+    document.getElementById("nfull").addEventListener("keyup",function(){
+  var nvaluef = document.getElementById("nfull").value;
+  if(nvaluef==""||nvaluef==0)
+  {
+    shownoodlesfull="";
+    billshow();
+    
+  }
+
+  else{ npricef=nvaluef*npf;
+    shownoodlesfull="<tr><td>Noodles</td><td>full-50/half-30</td><td>-</td><td>"+nvaluef+"</td><td>"+nvaluef+"*"+npf+"="+npricef+"</td></tr>";
+    billshow();
+    totalAmounth();
+      }
+    });
+
+
+    document.getElementById("nhalf").addEventListener("keyup",function(){
+  var nvalueh = document.getElementById("nhalf").value;
+  if(nvalueh==""||nvalueh==0)
+  {
+    shownoodleshalf="";
+    billshow();
+    
+  }
+
+  else{ npriceh=nvalueh*nph;
+    shownoodleshalf="<tr><td>Noodles</td><td>full-50/half-30</td><td>"+nvalueh+"</td><td>-</td><td>"+nvalueh+"*"+nph+"="+npriceh+"</td></tr>";
+    billshow();
+    totalAmounth();
+      }
+    });
+
+    document.getElementById("wfull").addEventListener("keyup",function(){
+  var wvaluef = document.getElementById("wfull").value;
+  if(wvaluef==""||wvaluef==0)
+  {
+    showwadapavfull="";
+    billshow();
+    
+  }
+
+  else{ wpricef=wvaluef*wpf;
+    showwadapavfull="<tr><td>Wadapav</td><td>full-30/half-15</td><td>-</td><td>"+wvaluef+"</td><td>"+wvaluef+"*"+wpf+"="+wpricef+"</td></tr>";
+    billshow();
+    totalAmounth();
+      }
+    });
+
+
+    document.getElementById("whalf").addEventListener("keyup",function(){
+  var wvalueh = document.getElementById("whalf").value;
+  if(wvalueh==""||wvalueh==0)
+  {
+    showwadapavhalf="";
+    billshow();
+    
+  }
+
+  else{ wpriceh=wvalueh*wph;
+    showwadapavhalf="<tr><td>Wadapav</td><td>full-30/half-15</td><td>"+wvalueh+"</td><td>-</td><td>"+wvalueh+"*"+wph+"="+wpriceh+"</td></tr>";
+    billshow();
+    totalAmounth();
+      }
+    });
+
+
+    /*function create to add all entery in table */
+
+   function billshow(){
+                      document.getElementById("billtable").innerHTML=showsamosafull+showsamosahalf+showdosafull+showdosahalf+showbhajiyafull+showbhajiyahalf+showjalebifull+showjalebihalf+shownoodlesfull+shownoodleshalf+showwadapavfull+showwadapavhalf;
+                      }
+
+
+    /* function entery end*/
+
+
+  /*function crete to show total amounth order menu ietem dishes */
+    function totalAmounth(){
+                             totalA=spricef+spriceh+dpricef+dpriceh+bpricef+bpriceh+jpricef+jpriceh+npricef+npriceh+wpricef+wpriceh;
+                             document.getElementById("head").innerHTML=totalA;
+       
+                            }
+
+                            console.log(totalA);
+
+    /* total end*/
+
+ </script>
+   
+</body>
+</html>
